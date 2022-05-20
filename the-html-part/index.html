@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <div class="container">
+        <img id="streamimage" src="http://192.168.7.151:8090/?action=stream" />
+        <div class="centered"><h1>+</h1></div>
+    </div>
+    <a href="/controller.html">go to controller page</a>
+    <!-- <div class="controls">
+        <form>
+            <input type="button" value="Up"><br>
+            <input type="button" value="Left">
+            <input type="button" value="Down">
+            <input type="button" value="Right">
+            <br>
+
+                <input type="number" value="5">
+                
+            <br>
+            <input type="button" value="Fire">
+            <input type="button" value="Fire With Aim">
+          </form>  
+        
+    </div> -->
+    <script>
+        // const number = document.querySelector('[type="number"]');
+        // const buttons = document.querySelectorAll('[type="button"]');
+        // buttons.forEach(button => button.addEventListener('click',updateButton));
+        // //number.addEventListener('input', updateButton);
+        
+        // function updateButton(event) {
+        //     var request;
+        //     switch (event.target.value) {
+        //         case 'Fire':
+        //             request = "http://192.168.7.151:8040/fire";
+        //             break;
+        //         case "Fire With Aim":
+        //             request = "http://192.168.7.151:8040/fireWithAim";
+        //             break;
+        //         default:
+        //             request = "http://192.168.7.151:8040/move/" + event.target.value + "/" + number.value;
+        //             break;
+        //     }
+        //     console.log("GET " + request);
+        //     var xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.open("GET", request, true); // true for asynchronous 
+        //     xmlHttp.send(null);
+        // if (button.value === 'Start machine') {
+        //     button.value = 'Stop machine';
+        //     paragraph.textContent = 'The machine has started!';
+        // } else {
+        //     button.value = 'Start machine';
+        //     paragraph.textContent = 'The machine is stopped.';
+        // }
+        // }
+
+    </script>
+
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        /* .controls {
+            position: relative;
+            text-align: center;
+        } */
+        
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+        }
+    </style>
+</html>

@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+ <html>
+     <pre class="output"></pre>
+     <script>
+         // side note: webkit has a different api for grabbing device orientation, if you want to run this on an iOS device it'll need to be rewritten
+         // other side note: i think modern versions of chrom(ium) on android has this problem too
+         var output = document.querySelector('.output');
+         var rotation;
+         var angleOfAttack;
+         var sendDelay = 100;
+         output.textContent = "if you're seeing this, something went wrong. try using android+firefox";
+         function handleOrientation(event) {
+            angleOfAttack = event.beta;
+            rotation = event.alpha;
+            output.textContent  = `beta : ${rotation}\n`;
+            output.textContent += `gamma: ${angleOfAttack}\n`;
+         }
+         window.addEventListener('deviceorientation', handleOrientation);
+         setInterval(function() {
+             if (angleOfAttack !== undefined) {
+                var request = "http://192.168.7.151:8040/setPos/" + angleOfAttack + "/" + rotation;
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", request, true);
+                xmlHttp.timeout = 100;
+                xmlHttp.send(null);
+             }
+         }, sendDelay);
+
+     </script>
+ </html>
